@@ -1,0 +1,46 @@
+body {
+  background: url(../images/background.svg) no-repeat 50% 0;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+
+  justify-content: center;
+}
+
+.pair {
+  top: 5px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+}
+
+.title {
+  top: 190px;
+  font: 700;
+  font-family: Caveat;
+  position: absolute;
+  margin: 0;
+}
+
+.text {
+  color: darkslategrey;
+  font: 300;
+  font-family: Caveat;
+  font-style: italic;
+  font-size: x-small;
+  position: absolute;
+  left: 230px;
+  top: 250px;
+  padding: 0;
+  margin: 0;
+}

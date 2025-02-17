@@ -1,4 +1,6 @@
 body {
+  display: flex;
+  position: relative;
   padding: 0;
   font-family: "Arial", sans-serif;
   font-size: 14px;
@@ -17,7 +19,6 @@ h1 {
   font-family: "Caveat", serif;
   font-size: 50px;
   line-height: 20px;
-  
 }
 
 h2 {
@@ -58,6 +59,15 @@ p {
   margin: 0 auto;
 }
 
+.wish {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  left: 100px;
+  top: 90px;
+  width: 250px;
+}
+
 .features {
   margin-bottom: 30px;
 }
@@ -82,13 +92,11 @@ p {
   padding-top: 60px;
   background-image: url(./img/teddy-bear.png);
   background-size: 40px 40px;
-
 }
 
 .feature-three {
   padding-top: 60px;
   background-image: url(./img/valentines-day.png);
-
 }
 
 .skills-list {
@@ -100,4 +108,9 @@ p {
   display: flex;
   justify-content: space-between;
   color: #999999;
+}
+
+button {
+  background-color:#e5c482;
+  border-radius: 5px;
 }

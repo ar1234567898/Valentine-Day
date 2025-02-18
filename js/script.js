@@ -1,8 +1,14 @@
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
+function getRandomNumber(min, max, last) {
+  let num;
+  do {
+      num = Math.floor(Math.random() * (max - min)); // Adjusted to fit array indexing
+  } while (num === last);
+  return num;
 }
 
-wishes = [
+let lastNum = null; // To track the last index
+
+const wishes = [
   "May love always shine brightly in your heart.",
   "Wishing you warmth, care, and endless happiness with your special someone.",
   "May your day be filled with romance and joy.",
@@ -15,6 +21,8 @@ wishes = [
   "Love, comfort, and the sweetest confessions today and always.",
 ];
 
-document.getElementById("btnLoveWishes").addEventListener("click", function () {
-  document.getElementById("loveWishes").innerHTML = wishes[getRandomInt(wishes.length)];
+document.getElementById("btnLoveWishes").addEventListener("click", () => {
+  lastNum = getRandomNumber(0, wishes.length, lastNum); // Ensure a different index
+  document.getElementById("loveWishes").innerHTML = wishes[lastNum];
 });
+

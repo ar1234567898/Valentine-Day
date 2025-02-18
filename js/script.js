@@ -1,12 +1,10 @@
 function getRandomNumber(min, max, last) {
   let num;
   do {
-      num = Math.floor(Math.random() * (max - min)); // Adjusted to fit array indexing
+    num = Math.floor(Math.random() * (max - min)); // Adjusted to fit array indexing
   } while (num === last);
   return num;
 }
-
-let lastNum = null; // To track the last index
 
 const wishes = [
   "May love always shine brightly in your heart.",
@@ -21,8 +19,9 @@ const wishes = [
   "Love, comfort, and the sweetest confessions today and always.",
 ];
 
+let lastNum = null; // To track the last index
+
 document.getElementById("btnLoveWishes").addEventListener("click", () => {
   lastNum = getRandomNumber(0, wishes.length, lastNum); // Ensure a different index
   document.getElementById("loveWishes").innerHTML = wishes[lastNum];
 });
-

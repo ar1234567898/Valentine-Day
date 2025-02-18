@@ -16,5 +16,5 @@ wishes = [
 ];
 
 document.getElementById("btnLoveWishes").addEventListener("click", function () {
-  document.getElementById("loveWishes").innerHTML = wishes[getRandomInt(9)];
+  document.getElementById("loveWishes").innerHTML = wishes[getRandomInt(wishes.length)];
 });

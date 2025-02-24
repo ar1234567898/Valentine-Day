@@ -63,7 +63,7 @@ p {
   display: flex;
   position: absolute;
   flex-direction: column;
-  left: 100px;
+  left: 130px;
   top: 90px;
   width: 250px;
 }
@@ -113,4 +113,5 @@ p {
 button {
   background-color:#e5c482;
   border-radius: 5px;
+  font-weight: 700;
 }

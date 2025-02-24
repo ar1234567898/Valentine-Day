@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Ткач Valentine's day</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Caveat">
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Caveat"
+    />
   </head>
   <body>
     <div class="container">
       <header class="site-header">
         <h1>Happy Valentine's Day!</h1>
-        <img src="./img/pair.png" width="250" height="250" alt="Muffin photo">
+        <img src="./img/pair.png" width="250" height="250" alt="Muffin photo" />
       </header>
 
       <section class="features">
@@ -23,11 +26,21 @@
       <section class="skills">
         <h2>People express their feelings in different ways, such as:</h2>
         <ul class="skills-list">
-          <li class="skills-item">💌 Love Notes – Handwritten letters or cards</li>
-          <li class="skills-item standard">🌹 Flowers – Roses, a classic symbol of romance</li>
-          <li class="skills-item standard">🍫 Chocolates & Sweets – A sweet way to show affection</li>
-          <li class="skills-item vip">🍽️ Romantic Dinners – Special meals with loved ones</li>
-          <li class="skills-item vip">🎁 Thoughtful Gifts – Personalized presents or surprises</li>
+          <li class="skills-item">
+            💌 Love Notes – Handwritten letters or cards
+          </li>
+          <li class="skills-item standard">
+            🌹 Flowers – Roses, a classic symbol of romance
+          </li>
+          <li class="skills-item standard">
+            🍫 Chocolates & Sweets – A sweet way to show affection
+          </li>
+          <li class="skills-item vip">
+            🍽️ Romantic Dinners – Special meals with loved ones
+          </li>
+          <li class="skills-item vip">
+            🎁 Thoughtful Gifts – Personalized presents or surprises
+          </li>
         </ul>
       </section>
 
@@ -35,14 +48,27 @@
         <h2>Get your wish!!!</h2>
         <button id="btnLoveWishes">Click here</button>
         <p id="loveWishes"></p>
+        <div class="shop">
+          <button id="buyHearts">Buy hearts here!</button>
+          <p id="hearts">❤️❤️❤️❤️❤️</p>
+        </div>
       </section>
-      
 
       <footer class="site-footer">
         <p>© ❤, 2025</p>
-        <p> I don’t need contact information… love will find you!!!</p>
+        <p>I don’t need contact information… love will find you!!!</p>
       </footer>
     </div>
   </body>
+  <dialog class="purchaseWindow">
+    <p>Solve an equation to get your hearts!</p>
+    <p class="equasionP"></p>
+    <input type="text" class="equasionInput" />
+    <p class="equasionHint">Enter the correct answer to receive more hearts.</p>
+    <button class="equasionButton">Submit</button>
+  </dialog>
+
+
+
   <script src="./js/script.js"></script>
 </html>

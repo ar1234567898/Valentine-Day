@@ -1,0 +1,117 @@
+body {
+  display: flex;
+  position: relative;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  background: url("../img/background.svg") no-repeat 100% 0;
+  background-size: cover;
+  display: flex;
+  position: relative;
+  justify-items: center;
+  align-items: center;
+}
+
+h1 {
+  width: 490px;
+  font-family: "Caveat", serif;
+  font-size: 50px;
+  line-height: 20px;
+}
+
+h2 {
+  padding-bottom: 12px;
+  border-bottom: 1px solid #cccccc;
+}
+
+p {
+  z-index: 2;
+}
+
+.site-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.skills-item {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  border-left: 10px solid #c4c4c4;
+  color: #999999;
+}
+
+.standard {
+  border-color: #ffc5b3;
+  color: #666666;
+}
+
+/* Add a rule for the vip class here */
+
+.container {
+  width: 480px;
+  margin: 0 auto;
+}
+
+.site-header img {
+  display: block;
+  margin: 0 auto;
+}
+
+.wish {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  left: 10%;
+  top: 10%;
+  width: 250px;
+}
+
+.features {
+  margin-bottom: 30px;
+}
+
+.features p {
+  display: inline-block;
+  vertical-align: top;
+  width: 30%;
+  margin: 0 5px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.feature-one {
+  padding-top: 60px;
+  background-image: url(../img/heart.png);
+  background-size: 40px 40px;
+}
+
+.feature-two {
+  padding-top: 60px;
+  background-image: url(../img/teddy-bear.png);
+  background-size: 40px 40px;
+}
+
+.feature-three {
+  padding-top: 60px;
+  background-image: url(../img/valentines-day.png);
+}
+
+.skills-list {
+  padding: 0;
+  list-style: none;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #999999;
+}
+
+button {
+  background-color:#e5c482;
+  border-radius: 5px;
+  font-weight: 700;
+}

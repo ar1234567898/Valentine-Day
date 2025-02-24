@@ -6,6 +6,8 @@ function getRandomNumber(min, max, last) {
   return num;
 }
 
+const examples = []
+
 const wishes = [
   "May love always shine brightly in your heart.",
   "Wishing you warmth, care, and endless happiness with your special someone.",
@@ -19,9 +21,12 @@ const wishes = [
   "Love, comfort, and the sweetest confessions today and always.",
 ];
 
+let equasionNum = 5;
+
 let lastNum = null; // To track the last index
 
 document.getElementById("btnLoveWishes").addEventListener("click", () => {
+  equasionNum -= equasionNum;
   lastNum = getRandomNumber(0, wishes.length, lastNum); // Ensure a different index
   document.getElementById("loveWishes").innerHTML = wishes[lastNum];
 });

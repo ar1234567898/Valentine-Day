@@ -1,12 +1,15 @@
 function getRandomNumber(min, max, last) {
   let num;
   do {
-    num = Math.floor(Math.random() * (max - min)); // Adjusted to fit array indexing
+    num = Math.floor(Math.random() * (max - min));
   } while (num === last);
   return num;
 }
 
-const examples = [];
+const equations = [
+  "3 + 5", "10 - 4", "7 + 2", "8 - 3", "6 + 4", "9 - 5", "2 + 6", "5 - 1",
+  "4 + 3", "7 - 2", "1 + 8", "10 - 7", "3 + 6", "8 - 4", "5 + 2"
+];
 
 const wishes = [
   "May love always shine brightly in your heart.",
@@ -18,24 +21,61 @@ const wishes = [
   "May your life always have space for big and beautiful love.",
   "Wishing you love that lifts you up and fills your life with meaning.",
   "May romance and passion never leave your life.",
-  "Love, comfort, and the sweetest confessions today and always.",
+  "Love, comfort, and the sweetest confessions today and always."
 ];
 
-let lastNum = null; // To track the last index
+let lastWishIndex = null;
+let lastEquationIndex = null;
+let hearts = 5;
 
-let hearts = 5; // Start with 5 currency
-const button = document.getElementById("btnLoveWishes");
+const buttonLoveWishes = document.getElementById("btnLoveWishes");
+const loveWishesElement = document.getElementById("loveWishes");
+const heartsElement = document.getElementById("hearts");
+const purchaseWindow = document.querySelector(".purchaseWindow");
+const equationP = document.querySelector(".equasionP");
+const equationInput = document.querySelector(".equasionInput");
+const equationButton = document.querySelector(".equasionButton");
 
-const wish = document.querySelectorAll(".wish");
+function updateHeartsDisplay() {
+  heartsElement.innerHTML = "❤️".repeat(hearts) + "💔".repeat(5 - hearts);
+}
 
-document.getElementById("btnLoveWishes").addEventListener("click", () => {
-  lastNum = getRandomNumber(0, wishes.length, lastNum); // Ensure a different index
-  document.getElementById("loveWishes").innerHTML = wishes[lastNum];
+function showWish() {
+  lastWishIndex = getRandomNumber(0, wishes.length, lastWishIndex);
+  loveWishesElement.innerHTML = wishes[lastWishIndex];
   if (hearts > 0) {
-    hearts--; // Spend one currency
-
-    if (hearts === 0) {
-      wish.forEach((wish) => wish.classList.toggle("is-hidden"));
-    }
+    hearts--;
+    updateHeartsDisplay();
   }
-});
+  if (hearts === 0) {
+    loveWishesElement.innerHTML = "You are out of hearts!";
+    buttonLoveWishes.classList.add("visually-hidden");
+  }
+}
+
+function showPurchaseWindow() {
+  purchaseWindow.showModal();
+  lastEquationIndex = getRandomNumber(0, equations.length, lastEquationIndex);
+  equationP.innerHTML = equations[lastEquationIndex] + " = ?";
+}
+
+function evaluateEquation() {
+  const userAnswer = parseInt(equationInput.value, 10);
+  const correctAnswer = eval(equations[lastEquationIndex]);
+  if (userAnswer === correctAnswer) {
+    hearts = 5;
+    loveWishesElement.innerHTML = null; 
+    buttonLoveWishes.classList.remove("visually-hidden");
+    updateHeartsDisplay();
+    purchaseWindow.close();
+  } else {
+    alert("Incorrect answer. Try again!");
+  }
+}
+
+buttonLoveWishes.addEventListener("click", showWish);
+document.getElementById("buyHearts").addEventListener("click", showPurchaseWindow);
+equationButton.addEventListener("click", evaluateEquation);
+
+// Initial display of hearts
+updateHeartsDisplay();

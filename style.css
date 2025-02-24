@@ -63,8 +63,8 @@ p {
   display: flex;
   position: absolute;
   flex-direction: column;
-  left: 130px;
-  top: 90px;
+  left: 10%;
+  top: 10%;
   width: 250px;
 }
 

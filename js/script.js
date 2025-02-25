@@ -53,8 +53,8 @@ function showWish() {
 
 function generateRandomEquation() {
   const operators = ["+", "-", "*"];
-  const num1 = getRandomNumber(1, 100, null);
-  const num2 = getRandomNumber(1, 1000, null);
+  const num1 = getRandomNumber(1, 40, null);
+  const num2 = getRandomNumber(1, 40, null);
   const operator = operators[Math.floor(Math.random() * operators.length)];
   return `${num1} ${operator} ${num2}`;
 }

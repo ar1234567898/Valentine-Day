@@ -6,11 +6,6 @@ function getRandomNumber(min, max, last) {
   return num;
 }
 
-const equations = [
-  "3 + 5", "10 - 4", "7 + 2", "8 - 3", "6 + 4", "9 - 5", "2 + 6", "5 - 1",
-  "4 + 3", "7 - 2", "1 + 8", "10 - 7", "3 + 6", "8 - 4", "5 + 2"
-];
-
 const wishes = [
   "May love always shine brightly in your heart.",
   "Wishing you warmth, care, and endless happiness with your special someone.",
@@ -21,7 +16,10 @@ const wishes = [
   "May your life always have space for big and beautiful love.",
   "Wishing you love that lifts you up and fills your life with meaning.",
   "May romance and passion never leave your life.",
-  "Love, comfort, and the sweetest confessions today and always."
+  "Love, comfort, and the sweetest confessions today and always.",
+  "May your love be strong and bright, and your life full of light.",
+  "Wishing you a love that is pure, strong, and eternal.",  
+  "May your love be like a blooming flower, beautiful and fragrant.",
 ];
 
 let lastWishIndex = null;
@@ -53,18 +51,28 @@ function showWish() {
   }
 }
 
+function generateRandomEquation() {
+  const operators = ["+", "-", "*"];
+  const num1 = getRandomNumber(1, 100, null);
+  const num2 = getRandomNumber(1, 1000, null);
+  const operator = operators[Math.floor(Math.random() * operators.length)];
+  return `${num1} ${operator} ${num2}`;
+}
+
 function showPurchaseWindow() {
+  equationInput.value = null;
   purchaseWindow.showModal();
-  lastEquationIndex = getRandomNumber(0, equations.length, lastEquationIndex);
-  equationP.innerHTML = equations[lastEquationIndex] + " = ?";
+  const equation = generateRandomEquation();
+  equationP.innerHTML = equation + " = ?";
+  lastEquationIndex = equation; // Store the equation for later evaluation
 }
 
 function evaluateEquation() {
   const userAnswer = parseInt(equationInput.value, 10);
-  const correctAnswer = eval(equations[lastEquationIndex]);
+  const correctAnswer = eval(lastEquationIndex);
   if (userAnswer === correctAnswer) {
     hearts = 5;
-    loveWishesElement.innerHTML = null; 
+    loveWishesElement.innerHTML = null;
     buttonLoveWishes.classList.remove("visually-hidden");
     updateHeartsDisplay();
     purchaseWindow.close();
@@ -74,7 +82,9 @@ function evaluateEquation() {
 }
 
 buttonLoveWishes.addEventListener("click", showWish);
-document.getElementById("buyHearts").addEventListener("click", showPurchaseWindow);
+document
+  .getElementById("buyHearts")
+  .addEventListener("click", showPurchaseWindow);
 equationButton.addEventListener("click", evaluateEquation);
 
 // Initial display of hearts

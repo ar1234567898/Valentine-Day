@@ -10,7 +10,7 @@
     />
   </head>
   <body>
-    <audio class="siteMusic" src="./music/valentine-day.mp3" autoplay></audio>
+    <audio class="siteMusic" src="./music/valentine-day.mp3" autoplay muted></audio> <!-- прибрати muted -->
     <div class="container">
       <header class="site-header">
         <h1>Happy Valentine's Day!</h1>
@@ -46,7 +46,7 @@
       </section>
 
       <section class="controls">
-        <button class="muteButton">.</button>
+        <button class="muteButton"></button>
       </section>
 
       <section class="wish">
@@ -57,6 +57,12 @@
           <button id="buyHearts">Buy hearts here!</button>
           <p id="hearts">❤️❤️❤️❤️❤️</p>
         </div>
+      </section>
+
+      <section class="loveCalculator">
+        <button class="loveCalculatorEnterButton">
+          Enter the love calculator!!!
+        </button>
       </section>
 
       <footer class="site-footer">
@@ -73,6 +79,20 @@
     <button class="equasionButton">Submit</button>
   </dialog>
 
+  <dialog class="loveCalculatorModal">
+    <button class="loveCalculatorExitButton">X</button>
+    <p class="loveCalcHint">Enter your name and the name of your loved one to calculate your love!</p>
+    <input type="text" class="name1" placeholder="Your name" />
+    <input
+      type="text"
+      class="name2"
+      placeholder="Loved one's name"
+    />
+    <button class="calcButton">Calculate</button>
+    <p class="loveCalculatorResult"></p>
+  </dialog>
+
   <script src="./js/wish.js"></script>
   <script src="./js/music.js"></script>
+  <script src="./js/love_calculator.js"></script>
 </html>
